@@ -43,7 +43,7 @@ Padding oracle attack on CBC encryption:
 
 The standard implementation of CBC decryption in block ciphers is to decrypt all ciphertext blocks, validate the padding, remove the PKCS7 padding, and return the message's plaintext.
 
-  
+![](images/902-_.png)  
 
 As depicted above, CBC decryption XORs each plaintext block with the previous ciphertext block. 
 
@@ -51,7 +51,7 @@ Suppose the attacker has two ciphertext blocks, and they want to decrypt the sec
 
 The intermediate state:
 
- 
+ ![](images/cbc.png)
 
 To repeat - in CBC encryption, each block of plaintext is XORed with the previous ciphertext block before being passed into the cipher.
 
@@ -59,7 +59,7 @@ This is the state of a ciphertext block after being decrypted by the block ciphe
 
 We know C1 already, as it is just part of our ciphertext, so if we find I2 then we can trivially find P2 and decrypt the ciphertext.
 
- 
+![](images/cbc2.png) 
 
 Manipulating the ciphertext:
 
@@ -67,7 +67,7 @@ We exploit this by passing in C1' + C2, where C1' is a sneakily chosen ciphertex
 
 We pass C1' + C2 to the server.
 
- 
+![](images/cbcr.png) 
 
 After determining the last byte of ciphertext, the attacker can use the same technique to obtain the second-to-last byte of the ciphertext. The attacker then uses the same approach described above, this time modifying the second-to-last byte until the padding is correct (0x02, 0x02).
 
