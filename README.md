@@ -77,3 +77,11 @@ Attacks using padding oracles:
 Concrete instantiations of the attack were realised against SSL and IPSec in early 2000s. In 2012 it was shown to be effective against some hardened security devices.
 
 As of early 2014, the attack is no longer considered a threat in real-life operation, though it is still workable in theory (see signal-to-noise ratio) against a certain class of machines. An attack called POODLE (late 2014) combines both a downgrade attack (to SSL 3.0) with a padding oracle attack on the older, insecure protocol to enable compromise of the transmitted data.
+
+References:
+
+1. https://en.wikipedia.org/wiki/Padding_oracle_attack
+
+2. https://robertheaton.com/2013/07/29/padding-oracle-attack/
+
+3. https://resources.infosecinstitute.com/padding-oracle-attack-2/#gref
