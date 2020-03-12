@@ -19,7 +19,7 @@ def byte_xor(ba1, ba2):
 
 # The main function where the logic of Oracle Padding Attack is implemented. 
 def find_bytes(block, all_blocks, index):
-    oracle_url = "https://project1.ecen4133.org/acda7163/paddingoracle/verify"
+    oracle_url = "https://abcd.com/1234"
     print(block)
 
     plaintext_bytes = bytearray([0 for _ in range(16)])
